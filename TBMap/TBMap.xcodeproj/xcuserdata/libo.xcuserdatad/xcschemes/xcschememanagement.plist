@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TestTBMap.xcscheme</key>
+		<key>TBMap.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>093E653E1A09C8AC00F508A5</key>
+		<key>09065E821A09CB3100C36964</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>093E65571A09C8AF00F508A5</key>
+		<key>09065E9D1A09CB3100C36964</key>
 		<dict>
 			<key>primary</key>
 			<true/>
