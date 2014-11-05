@@ -19,11 +19,13 @@
 		09065EA21A09CB3100C36964 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09065E8A1A09CB3100C36964 /* UIKit.framework */; };
 		09065EAA1A09CB3100C36964 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09065EA81A09CB3100C36964 /* InfoPlist.strings */; };
 		09065EAC1A09CB3100C36964 /* TBMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09065EAB1A09CB3100C36964 /* TBMapTests.m */; };
-		093E65691A09CB8200F508A5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093E65681A09CB8200F508A5 /* CoreLocation.framework */; };
-		093E656B1A09CB8800F508A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093E656A1A09CB8800F508A5 /* MapKit.framework */; };
+		093199381A0A0E5B00B77F7A /* TBLocationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 093199371A0A0E5B00B77F7A /* TBLocationTool.m */; };
 		093E656F1A09CBEC00F508A5 /* TBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E656D1A09CBEC00F508A5 /* TBRootViewController.m */; };
 		093E65701A09CBEC00F508A5 /* TBRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093E656E1A09CBEC00F508A5 /* TBRootViewController.xib */; };
 		093E657B1A09D4C600F508A5 /* TBLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E65791A09D4C600F508A5 /* TBLocationService.m */; };
+		094EB9841A0A03AA00B0CF8F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094EB9831A0A03AA00B0CF8F /* CoreLocation.framework */; };
+		094EB9861A0A03AF00B0CF8F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094EB9851A0A03AF00B0CF8F /* MapKit.framework */; };
+		099ED0D91A09FD40009DEBFE /* TBServiceContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 099ED0D81A09FD40009DEBFE /* TBServiceContext.m */; };
 		8C422899679097A43397D520 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E644D2ED071DADE667761E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,14 +56,19 @@
 		09065EA71A09CB3100C36964 /* TBMapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TBMapTests-Info.plist"; sourceTree = "<group>"; };
 		09065EA91A09CB3100C36964 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		09065EAB1A09CB3100C36964 /* TBMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBMapTests.m; sourceTree = "<group>"; };
-		093E65681A09CB8200F508A5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		093E656A1A09CB8800F508A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		093199361A0A0E5B00B77F7A /* TBLocationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationTool.h; sourceTree = "<group>"; };
+		093199371A0A0E5B00B77F7A /* TBLocationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLocationTool.m; sourceTree = "<group>"; };
+		093199391A0A0EA200B77F7A /* TBLocationConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationConstant.h; sourceTree = "<group>"; };
 		093E656C1A09CBEC00F508A5 /* TBRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBRootViewController.h; sourceTree = "<group>"; };
 		093E656D1A09CBEC00F508A5 /* TBRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBRootViewController.m; sourceTree = "<group>"; };
 		093E656E1A09CBEC00F508A5 /* TBRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBRootViewController.xib; sourceTree = "<group>"; };
 		093E65781A09D4C600F508A5 /* TBLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationService.h; sourceTree = "<group>"; };
 		093E65791A09D4C600F508A5 /* TBLocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLocationService.m; sourceTree = "<group>"; };
 		093E657D1A09D88700F508A5 /* TBLocationServiceDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationServiceDataSource.h; sourceTree = "<group>"; };
+		094EB9831A0A03AA00B0CF8F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		094EB9851A0A03AF00B0CF8F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		099ED0D71A09FD40009DEBFE /* TBServiceContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBServiceContext.h; sourceTree = "<group>"; };
+		099ED0D81A09FD40009DEBFE /* TBServiceContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBServiceContext.m; sourceTree = "<group>"; };
 		2F5D202F26EDC731C2751DC2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D2E644D2ED071DADE667761E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3E640E1F1649434714AD84 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,8 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				093E656B1A09CB8800F508A5 /* MapKit.framework in Frameworks */,
-				093E65691A09CB8200F508A5 /* CoreLocation.framework in Frameworks */,
+				094EB9861A0A03AF00B0CF8F /* MapKit.framework in Frameworks */,
+				094EB9841A0A03AA00B0CF8F /* CoreLocation.framework in Frameworks */,
 				09065E891A09CB3100C36964 /* CoreGraphics.framework in Frameworks */,
 				09065E8B1A09CB3100C36964 /* UIKit.framework in Frameworks */,
 				09065E871A09CB3100C36964 /* Foundation.framework in Frameworks */,
@@ -126,8 +133,8 @@
 		09065E851A09CB3100C36964 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				093E656A1A09CB8800F508A5 /* MapKit.framework */,
-				093E65681A09CB8200F508A5 /* CoreLocation.framework */,
+				094EB9851A0A03AF00B0CF8F /* MapKit.framework */,
+				094EB9831A0A03AA00B0CF8F /* CoreLocation.framework */,
 				09065E861A09CB3100C36964 /* Foundation.framework */,
 				09065E881A09CB3100C36964 /* CoreGraphics.framework */,
 				09065E8A1A09CB3100C36964 /* UIKit.framework */,
@@ -188,6 +195,11 @@
 				093E65781A09D4C600F508A5 /* TBLocationService.h */,
 				093E65791A09D4C600F508A5 /* TBLocationService.m */,
 				093E657D1A09D88700F508A5 /* TBLocationServiceDataSource.h */,
+				099ED0D71A09FD40009DEBFE /* TBServiceContext.h */,
+				099ED0D81A09FD40009DEBFE /* TBServiceContext.m */,
+				093199361A0A0E5B00B77F7A /* TBLocationTool.h */,
+				093199371A0A0E5B00B77F7A /* TBLocationTool.m */,
+				093199391A0A0EA200B77F7A /* TBLocationConstant.h */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -333,8 +345,10 @@
 			files = (
 				093E657B1A09D4C600F508A5 /* TBLocationService.m in Sources */,
 				09065E971A09CB3100C36964 /* TBAppDelegate.m in Sources */,
+				093199381A0A0E5B00B77F7A /* TBLocationTool.m in Sources */,
 				093E656F1A09CBEC00F508A5 /* TBRootViewController.m in Sources */,
 				09065E931A09CB3100C36964 /* main.m in Sources */,
+				099ED0D91A09FD40009DEBFE /* TBServiceContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,10 +466,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: lei shao (E972HLV37J)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TBMap/TBMap-Prefix.pch";
 				INFOPLIST_FILE = "TBMap/TBMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FC09D2E7-9CDE-4051-96ED-37AACCF3D505";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -466,10 +483,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: lei shao (E972HLV37J)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TBMap/TBMap-Prefix.pch";
 				INFOPLIST_FILE = "TBMap/TBMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FC09D2E7-9CDE-4051-96ED-37AACCF3D505";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

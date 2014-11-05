@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VDStruct.h"
+#import "TBServiceContext.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface TBAppDelegate : UIResponder <UIApplicationDelegate>
+@interface TBAppDelegate : UIResponder <UIApplicationDelegate,VDStructDelegate>
+{
+    TBServiceContext *_serviceContext;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

@@ -7,8 +7,13 @@
 //
 
 #import "TBRootViewController.h"
+#import "TBLocationService.h"
+#import "VDServiceFactory.h"
 
 @interface TBRootViewController ()
+{
+    TBLocationService *locationService;
+}
 
 @end
 
@@ -16,22 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+  
+    locationService = VDServiceFactoryGet(TBLocationService);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
+#pragma mark - 
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(IBAction)locate:(id)sender
+{
+    [locationService updateModel];
 }
-*/
 
 @end

@@ -14,6 +14,6 @@
 
 @interface TBLocationService :VDService<CLLocationManagerDelegate>
 
-
+-(void)setupEnvironment;
 
 @end

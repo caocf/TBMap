@@ -8,6 +8,8 @@
 
 #import "TBAppDelegate.h"
 #import "TBRootViewController.h"
+#import "VDServiceFactory.h"
+#import "TBLocationService.h"
 
 @implementation TBAppDelegate
 
@@ -15,8 +17,16 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+   
+    // service 模块的上下文环境
+    _serviceContext = [[TBServiceContext alloc] init];
+    
+    [VDServiceFactoryGet(TBLocationService) startService];
+    
     TBRootViewController *root = [[TBRootViewController alloc] init];
     self.window.rootViewController = root;
+    
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -48,6 +58,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - VDStruct
+- (VDServiceContext *)serviceContext
+{
+    return _serviceContext;
 }
 
 @end
