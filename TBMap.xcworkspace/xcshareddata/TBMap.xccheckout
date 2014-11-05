@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1A7B71C9-79E6-4A9E-A649-2A14FB87BCD3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TBMap</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5FB8BD6BD23620FAD50D7F45BBD14B890AEF043D</key>
+		<string>https://github.com/qq644531343/TBMap</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TBMap.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5FB8BD6BD23620FAD50D7F45BBD14B890AEF043D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/qq644531343/TBMap</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5FB8BD6BD23620FAD50D7F45BBD14B890AEF043D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5FB8BD6BD23620FAD50D7F45BBD14B890AEF043D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TBMap</string>
+		</dict>
+	</array>
+</dict>
+</plist>

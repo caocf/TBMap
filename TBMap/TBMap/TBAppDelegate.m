@@ -7,13 +7,17 @@
 //
 
 #import "TBAppDelegate.h"
+#import "TBRootViewController.h"
 
 @implementation TBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    TBRootViewController *root = [[TBRootViewController alloc] init];
+    self.window.rootViewController = root;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
