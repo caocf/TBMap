@@ -9,6 +9,7 @@
 #import "TBRootViewController.h"
 #import "TBLocationService.h"
 #import "VDServiceFactory.h"
+#import "TBLocationGeoManger.h"
 
 @interface TBRootViewController ()
 {
@@ -31,6 +32,11 @@
 -(IBAction)locate:(id)sender
 {
     [locationService updateModel];
+    
+    //116.302663  w:39.982331
+    TBLocationGeoManger *geo = [[TBLocationGeoManger alloc] init];
+    [geo gecode:@"北京动物园"];
+    [geo reverseGeocode:CLLocationCoordinate2DMake(39.982331, 116.302663)];
 }
 
 @end
