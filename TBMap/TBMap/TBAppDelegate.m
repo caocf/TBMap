@@ -24,10 +24,11 @@
     [VDServiceFactoryGet(TBLocationService) startService];
     
     TBRootViewController *root = [[TBRootViewController alloc] init];
-    self.window.rootViewController = root;
     
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:root];
     
-    
+    self.window.rootViewController = nav;
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

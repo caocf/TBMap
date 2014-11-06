@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09010DAE1A0B2357002A2960 /* TBLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09010DAC1A0B2357002A2960 /* TBLocationViewController.m */; };
+		09010DAF1A0B2357002A2960 /* TBLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09010DAD1A0B2357002A2960 /* TBLocationViewController.xib */; };
+		09010DB21A0B2E7D002A2960 /* TBLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09010DB11A0B2E7D002A2960 /* TBLocationModel.m */; };
 		09065E871A09CB3100C36964 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09065E861A09CB3100C36964 /* Foundation.framework */; };
 		09065E891A09CB3100C36964 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09065E881A09CB3100C36964 /* CoreGraphics.framework */; };
 		09065E8B1A09CB3100C36964 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09065E8A1A09CB3100C36964 /* UIKit.framework */; };
@@ -41,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09010DAB1A0B2357002A2960 /* TBLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationViewController.h; sourceTree = "<group>"; };
+		09010DAC1A0B2357002A2960 /* TBLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLocationViewController.m; sourceTree = "<group>"; };
+		09010DAD1A0B2357002A2960 /* TBLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBLocationViewController.xib; sourceTree = "<group>"; };
+		09010DB01A0B2E7D002A2960 /* TBLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationModel.h; sourceTree = "<group>"; };
+		09010DB11A0B2E7D002A2960 /* TBLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLocationModel.m; sourceTree = "<group>"; };
 		09065E831A09CB3100C36964 /* TBMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09065E861A09CB3100C36964 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09065E881A09CB3100C36964 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -157,6 +165,9 @@
 				093E656C1A09CBEC00F508A5 /* TBRootViewController.h */,
 				093E656D1A09CBEC00F508A5 /* TBRootViewController.m */,
 				093E656E1A09CBEC00F508A5 /* TBRootViewController.xib */,
+				09010DAB1A0B2357002A2960 /* TBLocationViewController.h */,
+				09010DAC1A0B2357002A2960 /* TBLocationViewController.m */,
+				09010DAD1A0B2357002A2960 /* TBLocationViewController.xib */,
 				09065E981A09CB3100C36964 /* Images.xcassets */,
 				09065E8D1A09CB3100C36964 /* Supporting Files */,
 			);
@@ -197,6 +208,8 @@
 			children = (
 				093E65781A09D4C600F508A5 /* TBLocationService.h */,
 				093E65791A09D4C600F508A5 /* TBLocationService.m */,
+				09010DB01A0B2E7D002A2960 /* TBLocationModel.h */,
+				09010DB11A0B2E7D002A2960 /* TBLocationModel.m */,
 				093E657D1A09D88700F508A5 /* TBLocationServiceDataSource.h */,
 				099ED0D71A09FD40009DEBFE /* TBServiceContext.h */,
 				099ED0D81A09FD40009DEBFE /* TBServiceContext.m */,
@@ -297,6 +310,7 @@
 				09065E911A09CB3100C36964 /* InfoPlist.strings in Resources */,
 				09065E991A09CB3100C36964 /* Images.xcassets in Resources */,
 				093E65701A09CBEC00F508A5 /* TBRootViewController.xib in Resources */,
+				09010DAF1A0B2357002A2960 /* TBLocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +365,8 @@
 				093E657B1A09D4C600F508A5 /* TBLocationService.m in Sources */,
 				09065E971A09CB3100C36964 /* TBAppDelegate.m in Sources */,
 				093199381A0A0E5B00B77F7A /* TBLocationTool.m in Sources */,
+				09010DAE1A0B2357002A2960 /* TBLocationViewController.m in Sources */,
+				09010DB21A0B2E7D002A2960 /* TBLocationModel.m in Sources */,
 				0931993C1A0A1DA600B77F7A /* TBLocationGeoTool.m in Sources */,
 				093E656F1A09CBEC00F508A5 /* TBRootViewController.m in Sources */,
 				09065E931A09CB3100C36964 /* main.m in Sources */,

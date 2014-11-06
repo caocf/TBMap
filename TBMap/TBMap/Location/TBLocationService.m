@@ -13,6 +13,8 @@
 {
     CLLocationCoordinate2D lastCoor;
     NSError                *serviceStartError;
+    
+    TBLocationModel         *_model;
 }
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
@@ -27,6 +29,7 @@
 {
     if (self = [super initWithContext:context]) {
         //[self setupEnvironment];
+        _model = [[TBLocationModel alloc] init];
     }
     return self;
 }
@@ -60,7 +63,7 @@
     _modelState = VDServiceModelStateLoading;
     [locationManager stopUpdatingLocation];
     [locationManager startUpdatingLocation];
-    
+    [self checkGPS];
 }
 
 - (void)stopUpdatingModel
@@ -68,19 +71,21 @@
     _modelState = VDServiceModelStateNormal;
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(updateModel) object:nil];
+    
+    [locationManager stopUpdatingLocation];
+    lastCoor = kCLLocationCoordinate2DInvalid;
    
 }
 
 - (VDModel *)getServiceModel
 {
-    return nil;
+    return _model;
 }
 
 - (void)contextDidChanged:(NSString *)sel
 {
     //关心context变化
 }
-
 
 //初始化环境
 -(void)setupEnvironment
@@ -92,7 +97,7 @@
     }
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = 10.0f;
+    //locationManager.distanceFilter = 10.0f;//kCLDistanceFilterNone
     [locationManager startUpdatingLocation];
     
     lastCoor = kCLLocationCoordinate2DInvalid;
@@ -103,44 +108,46 @@
 #pragma mark - CLLocationManagerDelegate
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    
+//    //未开始服务或者不在加载中，则不做处理
+//    if (_state == VDServiceStateUnloaded || _modelState == VDServiceModelStateNormal) {
+//        return;
+//    }
+    
     if ([locations count]>0) {
         CLLocation *loc = [locations objectAtIndex:0];
         CLLocationCoordinate2D coor = loc.coordinate;
         //存储用户GPS地点，用于服务端收集
-        
+        _model.coor = coor;
         //XLog(@"j:%f  w:%f",coor.longitude,coor.latitude);
         
         if (CLLocationCoordinate2DIsValid(lastCoor)) {
             int distance = (int)LantitudeLongitudeDist(lastCoor.longitude, lastCoor.latitude, coor.longitude, coor.latitude);
-            //NSLog(@"位置变换了，距离%d 速度：speed:%f",distance,loc.speed);
+            XLog(@"位置变换，距离%d 速度：speed:%f",distance,loc.speed);
         }
-        
         lastCoor = coor;
+        
+        [self modelSuccLoaded:nil];
     }
     
-    //未开始服务或者不在加载中，则不做处理
-    if (_state == VDServiceStateUnloaded || _modelState == VDServiceModelStateNormal) {
-        return;
-    }
     _modelState = VDServiceModelStateNormal;
 
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+//    if (_state == VDServiceStateUnloaded || _modelState == VDServiceModelStateNormal) {
+//        return;
+//    }
+
     if (error.code == kCLErrorDenied) {
-        NSLog(@"GPS拒绝访问");
+        XLog(@"GPS拒绝访问");
         
         [self checkGPS];
         [locationManager stopUpdatingLocation];
     }
     
-    if (_state == VDServiceStateUnloaded || _modelState == VDServiceModelStateNormal) {
-        return;
-    }
     _modelState = VDServiceModelStateNormal;
-    
-    [self modelFailLoaded:error];
-
 }
 
 #pragma mark - Tool
@@ -154,6 +161,7 @@
             XLog(@"%@",msg);
         }
         serviceStartError = error;
+        [self modelFailLoaded:serviceStartError];
     }else {
         XLog(@"定位服务开启");
         serviceStartError = nil;

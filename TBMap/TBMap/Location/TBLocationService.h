@@ -11,6 +11,7 @@
 
 #import "VDService.h"
 #import "TBLocationServiceDataSource.h"
+#import "TBLocationModel.h"
 
 @interface TBLocationService :VDService<CLLocationManagerDelegate>
 
