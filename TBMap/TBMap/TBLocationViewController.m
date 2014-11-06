@@ -21,10 +21,11 @@
     
     [super viewDidLoad];
 
+    geo = [[TBLocationGeoTool alloc] init];
     locationService = VDServiceFactoryGet(TBLocationService);
     
     
-    geo = [[TBLocationGeoTool alloc] init];
+    [self updateUI];
 
 }
 
@@ -59,7 +60,19 @@
 -(void)updateUI
 {
     TBLocationModel *model = (TBLocationModel *)[locationService getServiceModel];
-    _currentLocation.text = [NSString stringWithFormat:@"j %f w %f",model.coor.longitude,model.coor.latitude];
+    [geo reverseGeocode:model.coor complete:^(NSArray *placemarks) {
+        XLog(@"反编码：%@",[placemarks objectAtIndex:0]);
+        if ([placemarks count] > 0) {
+            CLPlacemark *place = [placemarks firstObject];
+            NSArray *form = [[place addressDictionary] objectForKey:@"FormattedAddressLines"];
+            if ([form count] > 0) {
+                _currentLocation.text = [NSString stringWithFormat:@"%@ %@",[form objectAtIndex:0] ,place.name];
+            }else {
+                _currentLocation.text = place.name;
+            }
+        }
+    }];
+
 }
 
 #pragma mark - Action
