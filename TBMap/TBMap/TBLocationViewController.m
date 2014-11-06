@@ -99,8 +99,10 @@
 }
 
 - (IBAction)queryReverseGeo:(id)sender {
-    
-    [geo reverseGeocode:CLLocationCoordinate2DMake([_inputLatitude.text doubleValue], [_inputLongitude.text doubleValue]) complete:^(NSArray *placemarks) {
+
+    CLLocationCoordinate2D coor = CLLocationCoordinate2DMake([_inputLatitude.text doubleValue], [_inputLongitude.text doubleValue]);
+                                                             
+    [geo reverseGeocode:coor complete:^(NSArray *placemarks) {
         if ([placemarks count] == 0) {
             _reverseResult.text = @"地址没找到";
         }else {
