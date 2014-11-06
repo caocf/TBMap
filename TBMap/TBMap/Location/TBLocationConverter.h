@@ -1,14 +1,12 @@
-//
-//  JZLocationConverter.h
-//  JZCLLocationMangerDome
-//
-//  Created by jack zhou on 13-8-22.
-//  Copyright (c) 2013年 JZ. All rights reserved.
-//
+
+/*!
+ *  @brief  火星坐标转换工具
+ *
+ */
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-@interface JZLocationConverter : NSObject
+@interface TBLocationConverter : NSObject
 
 /**
  *	@brief	世界标准地理坐标(WGS-84) 转换成 中国国测局地理坐标（GCJ-02）<火星坐标>

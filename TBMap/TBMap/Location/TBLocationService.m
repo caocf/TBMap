@@ -60,7 +60,6 @@
         return;
     }
     
-    _modelState = VDServiceModelStateLoading;
     [locationManager stopUpdatingLocation];
     [locationManager startUpdatingLocation];
     [self checkGPS];
@@ -109,16 +108,12 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     
-//    //未开始服务或者不在加载中，则不做处理
-//    if (_state == VDServiceStateUnloaded || _modelState == VDServiceModelStateNormal) {
-//        return;
-//    }
-    
     if ([locations count]>0) {
         CLLocation *loc = [locations objectAtIndex:0];
         CLLocationCoordinate2D coor = loc.coordinate;
         //存储用户GPS地点，用于服务端收集
-        _model.coor = coor;
+        _model.coor = [TBLocationConverter wgs84ToGcj02:coor];
+        
         //XLog(@"j:%f  w:%f",coor.longitude,coor.latitude);
         
         if (CLLocationCoordinate2DIsValid(lastCoor)) {
@@ -129,16 +124,9 @@
         
         [self modelSuccLoaded:nil];
     }
-    
-    _modelState = VDServiceModelStateNormal;
-
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    
-//    if (_state == VDServiceStateUnloaded || _modelState == VDServiceModelStateNormal) {
-//        return;
-//    }
 
     if (error.code == kCLErrorDenied) {
         XLog(@"GPS拒绝访问");
@@ -147,7 +135,6 @@
         [locationManager stopUpdatingLocation];
     }
     
-    _modelState = VDServiceModelStateNormal;
 }
 
 #pragma mark - Tool

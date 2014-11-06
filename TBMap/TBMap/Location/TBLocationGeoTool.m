@@ -25,7 +25,12 @@
 
 -(void)gecode:(NSString *)address complete:(CompleteBlock)complete
 {
-
+    
+    if (address.length == 0) {
+        complete(nil);
+        return;
+    }
+    
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
         
@@ -49,6 +54,11 @@
  *  @param coor 经纬度
  */
 - (void)reverseGeocode:(CLLocationCoordinate2D)coor complete:(CompleteBlock)complete{
+    
+    if (!CLLocationCoordinate2DIsValid(coor)) {
+        complete(nil);
+        return;
+    }
     
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     CLLocation *location=[[CLLocation alloc] initWithLatitude:coor.latitude longitude:coor.longitude];

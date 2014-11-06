@@ -61,11 +61,11 @@
 {
     TBLocationModel *model = (TBLocationModel *)[locationService getServiceModel];
     [geo reverseGeocode:model.coor complete:^(NSArray *placemarks) {
-        XLog(@"反编码：%@",[placemarks objectAtIndex:0]);
+        
         if ([placemarks count] > 0) {
             CLPlacemark *place = [placemarks firstObject];
             NSArray *form = [[place addressDictionary] objectForKey:@"FormattedAddressLines"];
-            if ([form count] > 0) {
+            if ([form count] > 0 && ![[form objectAtIndex:0] isEqualToString:SAFE_STRING(place.name)]) {
                 _currentLocation.text = [NSString stringWithFormat:@"%@ %@",[form objectAtIndex:0] ,place.name];
             }else {
                 _currentLocation.text = place.name;
@@ -83,11 +83,16 @@
 
 - (IBAction)queryGeo:(id)sender {
     
-    [geo gecode:@"北京动物园" complete:^(NSArray *placemarks) {
+    [geo gecode:_inputArea.text complete:^(NSArray *placemarks) {
         
         CLPlacemark *placemark = [placemarks firstObject];
         CLLocationCoordinate2D coor = placemark.location.coordinate;
         
+        if ([placemarks count] == 0) {
+            _geoResult.text = @"地址没找到";
+        }else {
+            _geoResult.text = placemark.name;
+        }
         XLog(@"地理编码 name=%@ locality=%@ country=%@ postalCode=%@\n经纬度%f %f",placemark.name,placemark.locality,placemark.country,placemark.postalCode,coor.longitude,coor.latitude);
         
     }];
@@ -95,9 +100,23 @@
 
 - (IBAction)queryReverseGeo:(id)sender {
     
-    [geo reverseGeocode:CLLocationCoordinate2DMake(39.9833, 116.302) complete:^(NSArray *placemarks) {
+    [geo reverseGeocode:CLLocationCoordinate2DMake([_inputLatitude.text doubleValue], [_inputLongitude.text doubleValue]) complete:^(NSArray *placemarks) {
+        if ([placemarks count] == 0) {
+            _reverseResult.text = @"地址没找到";
+        }else {
+            _reverseResult.text = [[placemarks firstObject] name];
+        }
         XLog(@"反编码：%@",[[placemarks objectAtIndex:0] name]);
     }];
     
 }
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_inputArea resignFirstResponder];
+    [_inputLatitude resignFirstResponder];
+    [_inputLongitude resignFirstResponder];
+}
+
 @end
