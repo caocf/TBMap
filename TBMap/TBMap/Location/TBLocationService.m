@@ -108,11 +108,11 @@
         CLLocationCoordinate2D coor = loc.coordinate;
         //存储用户GPS地点，用于服务端收集
         
-        XLog(@"j:%f  w:%f",coor.longitude,coor.latitude);
+        //XLog(@"j:%f  w:%f",coor.longitude,coor.latitude);
         
         if (CLLocationCoordinate2DIsValid(lastCoor)) {
             int distance = (int)LantitudeLongitudeDist(lastCoor.longitude, lastCoor.latitude, coor.longitude, coor.latitude);
-            NSLog(@"位置变换了，距离%d 速度：speed:%f",distance,loc.speed);
+            //NSLog(@"位置变换了，距离%d 速度：speed:%f",distance,loc.speed);
         }
         
         lastCoor = coor;

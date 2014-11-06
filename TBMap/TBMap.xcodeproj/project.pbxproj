@@ -20,7 +20,7 @@
 		09065EAA1A09CB3100C36964 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09065EA81A09CB3100C36964 /* InfoPlist.strings */; };
 		09065EAC1A09CB3100C36964 /* TBMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09065EAB1A09CB3100C36964 /* TBMapTests.m */; };
 		093199381A0A0E5B00B77F7A /* TBLocationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 093199371A0A0E5B00B77F7A /* TBLocationTool.m */; };
-		0931993C1A0A1DA600B77F7A /* TBLocationGeoManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0931993B1A0A1DA600B77F7A /* TBLocationGeoManger.m */; };
+		0931993C1A0A1DA600B77F7A /* TBLocationGeoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0931993B1A0A1DA600B77F7A /* TBLocationGeoTool.m */; };
 		093E656F1A09CBEC00F508A5 /* TBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E656D1A09CBEC00F508A5 /* TBRootViewController.m */; };
 		093E65701A09CBEC00F508A5 /* TBRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093E656E1A09CBEC00F508A5 /* TBRootViewController.xib */; };
 		093E657B1A09D4C600F508A5 /* TBLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E65791A09D4C600F508A5 /* TBLocationService.m */; };
@@ -60,8 +60,8 @@
 		093199361A0A0E5B00B77F7A /* TBLocationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationTool.h; sourceTree = "<group>"; };
 		093199371A0A0E5B00B77F7A /* TBLocationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLocationTool.m; sourceTree = "<group>"; };
 		093199391A0A0EA200B77F7A /* TBLocationConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationConstant.h; sourceTree = "<group>"; };
-		0931993A1A0A1DA600B77F7A /* TBLocationGeoManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationGeoManger.h; sourceTree = "<group>"; };
-		0931993B1A0A1DA600B77F7A /* TBLocationGeoManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLocationGeoManger.m; sourceTree = "<group>"; };
+		0931993A1A0A1DA600B77F7A /* TBLocationGeoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLocationGeoTool.h; sourceTree = "<group>"; };
+		0931993B1A0A1DA600B77F7A /* TBLocationGeoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLocationGeoTool.m; sourceTree = "<group>"; };
 		093E656C1A09CBEC00F508A5 /* TBRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBRootViewController.h; sourceTree = "<group>"; };
 		093E656D1A09CBEC00F508A5 /* TBRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBRootViewController.m; sourceTree = "<group>"; };
 		093E656E1A09CBEC00F508A5 /* TBRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBRootViewController.xib; sourceTree = "<group>"; };
@@ -203,8 +203,8 @@
 				093199361A0A0E5B00B77F7A /* TBLocationTool.h */,
 				093199371A0A0E5B00B77F7A /* TBLocationTool.m */,
 				093199391A0A0EA200B77F7A /* TBLocationConstant.h */,
-				0931993A1A0A1DA600B77F7A /* TBLocationGeoManger.h */,
-				0931993B1A0A1DA600B77F7A /* TBLocationGeoManger.m */,
+				0931993A1A0A1DA600B77F7A /* TBLocationGeoTool.h */,
+				0931993B1A0A1DA600B77F7A /* TBLocationGeoTool.m */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -351,7 +351,7 @@
 				093E657B1A09D4C600F508A5 /* TBLocationService.m in Sources */,
 				09065E971A09CB3100C36964 /* TBAppDelegate.m in Sources */,
 				093199381A0A0E5B00B77F7A /* TBLocationTool.m in Sources */,
-				0931993C1A0A1DA600B77F7A /* TBLocationGeoManger.m in Sources */,
+				0931993C1A0A1DA600B77F7A /* TBLocationGeoTool.m in Sources */,
 				093E656F1A09CBEC00F508A5 /* TBRootViewController.m in Sources */,
 				09065E931A09CB3100C36964 /* main.m in Sources */,
 				099ED0D91A09FD40009DEBFE /* TBServiceContext.m in Sources */,

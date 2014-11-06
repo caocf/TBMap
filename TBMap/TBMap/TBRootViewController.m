@@ -9,7 +9,7 @@
 #import "TBRootViewController.h"
 #import "TBLocationService.h"
 #import "VDServiceFactory.h"
-#import "TBLocationGeoManger.h"
+#import "TBLocationGeoTool.h"
 
 @interface TBRootViewController ()
 {
@@ -33,10 +33,20 @@
 {
     [locationService updateModel];
     
-    //116.302663  w:39.982331
-    TBLocationGeoManger *geo = [[TBLocationGeoManger alloc] init];
-    [geo gecode:@"北京动物园"];
-    [geo reverseGeocode:CLLocationCoordinate2DMake(39.982331, 116.302663)];
+    TBLocationGeoTool *geo = [[TBLocationGeoTool alloc] init];
+    
+    [geo gecode:@"北京动物园" complete:^(NSArray *placemarks) {
+        
+        CLPlacemark *placemark = [placemarks firstObject];
+        CLLocationCoordinate2D coor = placemark.location.coordinate;
+  
+        XLog(@"地理编码 name=%@ locality=%@ country=%@ postalCode=%@\n经纬度%f %f",placemark.name,placemark.locality,placemark.country,placemark.postalCode,coor.longitude,coor.latitude);
+
+    }];
+
+    [geo reverseGeocode:CLLocationCoordinate2DMake(39.9833, 116.302) complete:^(NSArray *placemarks) {
+        XLog(@"反编码：%@",[[placemarks objectAtIndex:0] name]);
+    }];
 }
 
 @end

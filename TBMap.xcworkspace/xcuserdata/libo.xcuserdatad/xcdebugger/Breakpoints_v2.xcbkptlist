@@ -9,14 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TBMap/TBMap/Location/TBLocationGeoManger.m"
-            timestampString = "436873167.584195"
+            filePath = "TBMap/TBMap/Location/TBLocationGeoTool.m"
+            timestampString = "436936817.862425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-reverseGeocode:"
-            landmarkType = "5">
+            startingLineNumber = "86"
+            endingLineNumber = "86">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
