@@ -12,6 +12,8 @@
 
 @synthesize place=_place;
 
+#pragma mark - init
+
 -(id)init
 {
     return [self initWithPlace:nil];
@@ -31,6 +33,8 @@
 {
     return [[[self class] alloc] initWithPlace:p];
 }
+
+#pragma mark - MKAnnotation
 
 -(CLLocationCoordinate2D)coordinate
 {
@@ -64,6 +68,8 @@
     }
     return @"未知";
 }
+
+#pragma mark - Other
 
 -(NSString *)description
 {

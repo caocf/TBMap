@@ -37,6 +37,7 @@
 		096A52EE1A0C70C00011BFE6 /* TBMapViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A52ED1A0C70C00011BFE6 /* TBMapViewManager.m */; };
 		096A52F11A0C7B9A0011BFE6 /* class_meishi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 096A52EF1A0C7B9A0011BFE6 /* class_meishi@2x.png */; };
 		096A52F21A0C7B9A0011BFE6 /* life@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 096A52F01A0C7B9A0011BFE6 /* life@2x.png */; };
+		096A52F51A0C820F0011BFE6 /* TBMapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A52F41A0C820F0011BFE6 /* TBMapTool.m */; };
 		099ED0D91A09FD40009DEBFE /* TBServiceContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 099ED0D81A09FD40009DEBFE /* TBServiceContext.m */; };
 		8C422899679097A43397D520 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E644D2ED071DADE667761E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,8 @@
 		096A52ED1A0C70C00011BFE6 /* TBMapViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMapViewManager.m; sourceTree = "<group>"; };
 		096A52EF1A0C7B9A0011BFE6 /* class_meishi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_meishi@2x.png"; sourceTree = "<group>"; };
 		096A52F01A0C7B9A0011BFE6 /* life@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life@2x.png"; sourceTree = "<group>"; };
+		096A52F31A0C820F0011BFE6 /* TBMapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMapTool.h; sourceTree = "<group>"; };
+		096A52F41A0C820F0011BFE6 /* TBMapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMapTool.m; sourceTree = "<group>"; };
 		099ED0D71A09FD40009DEBFE /* TBServiceContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBServiceContext.h; sourceTree = "<group>"; };
 		099ED0D81A09FD40009DEBFE /* TBServiceContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBServiceContext.m; sourceTree = "<group>"; };
 		2F5D202F26EDC731C2751DC2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 				096A52E71A0C6ECC0011BFE6 /* TBMapAnnotation.m */,
 				096A52DE1A0C62F80011BFE6 /* TBMapView.h */,
 				096A52DF1A0C62F80011BFE6 /* TBMapView.m */,
+				096A52F31A0C820F0011BFE6 /* TBMapTool.h */,
+				096A52F41A0C820F0011BFE6 /* TBMapTool.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				093199381A0A0E5B00B77F7A /* TBLocationTool.m in Sources */,
 				09010DB51A0B36EE002A2960 /* TBLocationConverter.m in Sources */,
 				09010DAE1A0B2357002A2960 /* TBLocationViewController.m in Sources */,
+				096A52F51A0C820F0011BFE6 /* TBMapTool.m in Sources */,
 				09010DB21A0B2E7D002A2960 /* TBLocationModel.m in Sources */,
 				0931993C1A0A1DA600B77F7A /* TBLocationGeoTool.m in Sources */,
 				093E656F1A09CBEC00F508A5 /* TBRootViewController.m in Sources */,

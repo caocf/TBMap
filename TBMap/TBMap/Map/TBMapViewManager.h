@@ -8,7 +8,9 @@
 #import <MapKit/MapKit.h>
 #import "TBMapAnnotation.h"
 #import "TBLocationModel.h"
+#import "TBMapTool.h"
 #import "TBMapView.h"
+
 
 @interface TBMapViewManager : NSObject <MKMapViewDelegate>
 
