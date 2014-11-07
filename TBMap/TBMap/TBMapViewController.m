@@ -17,12 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    map = [TBMapView loadMapOnView:self.view withFrame:CGRectMake(0, 30, 320, 450)];
+    mapManager = [[TBMapViewManager alloc] init];
+    [mapManager addMapInViewController:self frame:CGRectMake(0, 20, 320, 450)];
     
+    [self performSelector:@selector(showAnnotation) withObject:nil afterDelay:2];
     
 }
 
-
+-(void)showAnnotation
+{
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    TBLocationModel *model = [[TBLocationModel alloc] init];
+    model.coor = CLLocationCoordinate2DMake(40.035672, 116.350061);
+    model.title = @"我在这里";
+    model.subtitle = @"你好，我在这里";
+    [array addObject:model];
+    
+    [mapManager refreshAnnotations:array];
+}
 
 
 @end

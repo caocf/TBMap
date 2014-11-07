@@ -33,6 +33,10 @@
 		096A52E01A0C62F80011BFE6 /* TBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A52DF1A0C62F80011BFE6 /* TBMapView.m */; };
 		096A52E41A0C632E0011BFE6 /* TBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A52E21A0C632E0011BFE6 /* TBMapViewController.m */; };
 		096A52E51A0C632E0011BFE6 /* TBMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096A52E31A0C632E0011BFE6 /* TBMapViewController.xib */; };
+		096A52E81A0C6ECC0011BFE6 /* TBMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A52E71A0C6ECC0011BFE6 /* TBMapAnnotation.m */; };
+		096A52EE1A0C70C00011BFE6 /* TBMapViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A52ED1A0C70C00011BFE6 /* TBMapViewManager.m */; };
+		096A52F11A0C7B9A0011BFE6 /* class_meishi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 096A52EF1A0C7B9A0011BFE6 /* class_meishi@2x.png */; };
+		096A52F21A0C7B9A0011BFE6 /* life@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 096A52F01A0C7B9A0011BFE6 /* life@2x.png */; };
 		099ED0D91A09FD40009DEBFE /* TBServiceContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 099ED0D81A09FD40009DEBFE /* TBServiceContext.m */; };
 		8C422899679097A43397D520 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E644D2ED071DADE667761E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -89,6 +93,12 @@
 		096A52E11A0C632E0011BFE6 /* TBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMapViewController.h; sourceTree = "<group>"; };
 		096A52E21A0C632E0011BFE6 /* TBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMapViewController.m; sourceTree = "<group>"; };
 		096A52E31A0C632E0011BFE6 /* TBMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBMapViewController.xib; sourceTree = "<group>"; };
+		096A52E61A0C6ECC0011BFE6 /* TBMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMapAnnotation.h; sourceTree = "<group>"; };
+		096A52E71A0C6ECC0011BFE6 /* TBMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMapAnnotation.m; sourceTree = "<group>"; };
+		096A52EC1A0C70C00011BFE6 /* TBMapViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMapViewManager.h; sourceTree = "<group>"; };
+		096A52ED1A0C70C00011BFE6 /* TBMapViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMapViewManager.m; sourceTree = "<group>"; };
+		096A52EF1A0C7B9A0011BFE6 /* class_meishi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_meishi@2x.png"; sourceTree = "<group>"; };
+		096A52F01A0C7B9A0011BFE6 /* life@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life@2x.png"; sourceTree = "<group>"; };
 		099ED0D71A09FD40009DEBFE /* TBServiceContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBServiceContext.h; sourceTree = "<group>"; };
 		099ED0D81A09FD40009DEBFE /* TBServiceContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBServiceContext.m; sourceTree = "<group>"; };
 		2F5D202F26EDC731C2751DC2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +201,8 @@
 		09065E8D1A09CB3100C36964 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				096A52EF1A0C7B9A0011BFE6 /* class_meishi@2x.png */,
+				096A52F01A0C7B9A0011BFE6 /* life@2x.png */,
 				09065E8E1A09CB3100C36964 /* TBMap-Info.plist */,
 				09065E8F1A09CB3100C36964 /* InfoPlist.strings */,
 				09065E921A09CB3100C36964 /* main.m */,
@@ -241,6 +253,10 @@
 		093E657A1A09D4C600F508A5 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				096A52EC1A0C70C00011BFE6 /* TBMapViewManager.h */,
+				096A52ED1A0C70C00011BFE6 /* TBMapViewManager.m */,
+				096A52E61A0C6ECC0011BFE6 /* TBMapAnnotation.h */,
+				096A52E71A0C6ECC0011BFE6 /* TBMapAnnotation.m */,
 				096A52DE1A0C62F80011BFE6 /* TBMapView.h */,
 				096A52DF1A0C62F80011BFE6 /* TBMapView.m */,
 			);
@@ -325,10 +341,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				096A52F11A0C7B9A0011BFE6 /* class_meishi@2x.png in Resources */,
 				09065E911A09CB3100C36964 /* InfoPlist.strings in Resources */,
 				09065E991A09CB3100C36964 /* Images.xcassets in Resources */,
 				093E65701A09CBEC00F508A5 /* TBRootViewController.xib in Resources */,
 				096A52E51A0C632E0011BFE6 /* TBMapViewController.xib in Resources */,
+				096A52F21A0C7B9A0011BFE6 /* life@2x.png in Resources */,
 				09010DAF1A0B2357002A2960 /* TBLocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,8 +399,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				096A52E81A0C6ECC0011BFE6 /* TBMapAnnotation.m in Sources */,
 				096A52E01A0C62F80011BFE6 /* TBMapView.m in Sources */,
 				093E657B1A09D4C600F508A5 /* TBLocationService.m in Sources */,
+				096A52EE1A0C70C00011BFE6 /* TBMapViewManager.m in Sources */,
 				09065E971A09CB3100C36964 /* TBAppDelegate.m in Sources */,
 				093199381A0A0E5B00B77F7A /* TBLocationTool.m in Sources */,
 				09010DB51A0B36EE002A2960 /* TBLocationConverter.m in Sources */,

@@ -8,15 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface TBMapView : MKMapView
-
-/*!
- *  @brief  加载地图
- *  @return TBMapView 实例
- */
-+(TBMapView *)loadMapOnView:(UIView *)superview withFrame:(CGRect)frame;
-
 
 
 @end

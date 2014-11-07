@@ -10,13 +10,6 @@
 
 @implementation TBMapView
 
-+(TBMapView *)loadMapOnView:(UIView *)superview withFrame:(CGRect)frame
-{
-    TBMapView *map = [[TBMapView alloc] initWithFrame:frame];
-    if (superview) {
-        [superview addSubview:map];
-    }
-    return map;
-}
+
 
 @end

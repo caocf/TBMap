@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TBMapView.h"
+#import "TBMapViewManager.h"
 
 @interface TBMapViewController : UIViewController
 {
-    TBMapView *map;
+    TBMapViewManager *mapManager;
 }
 
 @end

@@ -13,6 +13,8 @@
 
 @property (nonatomic) CLLocationCoordinate2D coor;
 
+@property (nonatomic,strong) NSString *title;
 
+@property (nonatomic,strong) NSString *subtitle;
 
 @end

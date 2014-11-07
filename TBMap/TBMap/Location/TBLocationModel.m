@@ -10,4 +10,14 @@
 
 @implementation TBLocationModel
 
+-(NSString *)title
+{
+    return @"未知";
+}
+
+-(NSString *)subtitle
+{
+    return @"未知地点";
+}
+
 @end
