@@ -25,6 +25,7 @@
     if(self)
     {
         self.place = p;
+        
     }
     return self;
 }
@@ -73,7 +74,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"MyAn %@ %@ %f %f",self.title,self.subtitle,self.coordinate.latitude,self.coordinate.longitude];
+    return [NSString stringWithFormat:@"MyAn %@ %@ %f %f",[self title],[self subtitle],self.coordinate.latitude,self.coordinate.longitude];
 }
 
 - (void)dealloc {

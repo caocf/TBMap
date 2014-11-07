@@ -12,11 +12,17 @@
 
 -(NSString *)title
 {
+    if (_title) {
+        return _title;
+    }
     return @"未知";
 }
 
 -(NSString *)subtitle
 {
+    if (_subtitle) {
+        return _subtitle;
+    }
     return @"未知地点";
 }
 

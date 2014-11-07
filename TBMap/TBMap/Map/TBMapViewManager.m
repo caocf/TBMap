@@ -14,7 +14,7 @@
     mapview = [[TBMapView alloc] initWithFrame:frame];
     mapview.mapType = MKMapTypeStandard;
     
-    //[self performSelector:@selector(updateRegion) withObject:nil afterDelay:1];
+    [self performSelector:@selector(updateRegion) withObject:nil afterDelay:0];
     
     mapview.userLocation.title = @"我的位置";
     mapview.showsUserLocation =YES;
@@ -63,8 +63,8 @@
     MKPolyline *routeLine = [self getPolyline];
     
     MKPolylineView *routeLineView = [[MKPolylineView alloc] initWithPolyline:routeLine];
-    routeLineView.fillColor = [UIColor greenColor];
-    routeLineView.strokeColor = [UIColor greenColor];
+    routeLineView.fillColor = [UIColor blueColor];
+    routeLineView.strokeColor = [UIColor blueColor];
     routeLineView.lineWidth = 7;
     
     return routeLineView;
@@ -73,11 +73,13 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    view.transform = CGAffineTransformMakeScale(1.0, 1.0);
+    view.transform = CGAffineTransformMakeScale(1.5, 1.5);
 }
+
+
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
-    view.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    view.transform = CGAffineTransformMakeScale(1.0, 1.0);
 }
 
 
