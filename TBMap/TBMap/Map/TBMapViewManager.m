@@ -18,8 +18,7 @@
     
     mapview.userLocation.title = @"我的位置";
     mapview.showsUserLocation =YES;
-    
-    mapview.userTrackingMode = MKUserTrackingModeFollowWithHeading;
+   // mapview.userTrackingMode = MKUserTrackingModeFollowWithHeading;
     
     mapview.delegate = self;
     [viewController.view addSubview:mapview];
@@ -58,6 +57,20 @@
     return pinView;
 }
 
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
+{
+
+    MKPolyline *routeLine = [self getPolyline];
+    
+    MKPolylineView *routeLineView = [[MKPolylineView alloc] initWithPolyline:routeLine];
+    routeLineView.fillColor = [UIColor greenColor];
+    routeLineView.strokeColor = [UIColor greenColor];
+    routeLineView.lineWidth = 7;
+    
+    return routeLineView;
+
+}
+
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     view.transform = CGAffineTransformMakeScale(1.0, 1.0);
@@ -77,6 +90,9 @@
     MKCoordinateSpan span = MKCoordinateSpanMake(0.08, 0.08);
     MKCoordinateRegion region = MKCoordinateRegionMake(coor, span);
     [mapview setRegion:region animated:YES];
+    
+    
+    [mapview addOverlay:[self getPolyline]];
 }
 
 -(void)refreshAnnotations:(NSArray *)simpleItems
@@ -107,7 +123,20 @@
 
 #pragma mark - Tool
 
-
+-(MKPolyline *)getPolyline
+{
+    MKMapPoint *pointArray = malloc(sizeof(CLLocationCoordinate2D) * 5);
+    
+    for (int i = 0; i < 5; i++) {
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(40.035672 + i*0.02, 116.350061);
+        MKMapPoint point = MKMapPointForCoordinate(coordinate);
+        pointArray[i] = point;
+    }
+    
+    MKPolyline *routeLine = [MKPolyline polylineWithPoints:pointArray count:5];
+    
+    return routeLine;
+}
 
 
 -(void)dealloc
