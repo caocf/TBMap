@@ -14,7 +14,7 @@
     mapview = [[TBMapView alloc] initWithFrame:frame];
     mapview.mapType = MKMapTypeStandard;
     
-    [self performSelector:@selector(updateRegion) withObject:nil afterDelay:0];
+    //[self performSelector:@selector(updateRegion) withObject:nil afterDelay:0];
     
     mapview.userLocation.title = @"我的位置";
     mapview.showsUserLocation =YES;
@@ -57,6 +57,7 @@
     return pinView;
 }
 
+
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
 
@@ -92,8 +93,8 @@
     MKCoordinateSpan span = MKCoordinateSpanMake(0.08, 0.08);
     MKCoordinateRegion region = MKCoordinateRegionMake(coor, span);
     [mapview setRegion:region animated:YES];
-    
-    
+
+    [mapview removeOverlays:mapview.overlays];
     [mapview addOverlay:[self getPolyline]];
 }
 
@@ -108,6 +109,9 @@
     annotations = [TBMapTool createAnnotations:simpleItemsArray];
     
     [mapview addAnnotations:annotations];
+    
+    //test
+    //[TBMapTool findLocation];
     
 }
 
@@ -127,15 +131,16 @@
 
 -(MKPolyline *)getPolyline
 {
-    MKMapPoint *pointArray = malloc(sizeof(CLLocationCoordinate2D) * 5);
+    MKMapPoint *pointArray = malloc(sizeof(CLLocationCoordinate2D) * 2);
     
-    for (int i = 0; i < 5; i++) {
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(40.035672 + i*0.02, 116.350061);
-        MKMapPoint point = MKMapPointForCoordinate(coordinate);
-        pointArray[i] = point;
-    }
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(40.035672, 116.350061);
+    MKMapPoint point = MKMapPointForCoordinate(coordinate);
+    pointArray[0] = point;
+   
+    MKMapPoint userPoint = MKMapPointForCoordinate(mapview.userLocation.coordinate);
+    pointArray[1] = userPoint;
     
-    MKPolyline *routeLine = [MKPolyline polylineWithPoints:pointArray count:5];
+    MKPolyline *routeLine = [MKPolyline polylineWithPoints:pointArray count:2];
     
     return routeLine;
 }

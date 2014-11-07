@@ -19,4 +19,6 @@
  */
 + (NSArray *)createAnnotations:(NSArray *)items;
 
++(void)findLocation;
+
 @end
