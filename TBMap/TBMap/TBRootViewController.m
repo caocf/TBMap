@@ -11,6 +11,7 @@
 #import "VDServiceFactory.h"
 #import "TBLocationGeoTool.h"
 #import "TBLocationViewController.h"
+#import "TBMapViewController.h"
 
 @interface TBRootViewController ()
 {
@@ -37,5 +38,15 @@
     return;
         
 }
+
+-(IBAction)map:(id)sender
+{
+    TBMapViewController *vc = [[TBMapViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    return;
+    
+}
+
 
 @end
