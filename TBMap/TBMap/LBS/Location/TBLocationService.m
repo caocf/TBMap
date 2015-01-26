@@ -42,7 +42,7 @@
 #pragma mark - 实现基类的方法
 - (BOOL)loadModel
 {
-    [self setupEnvironment];
+    [self performSelector:@selector(setupEnvironment) withObject:nil afterDelay:1];
     return YES;
 }
 
@@ -95,8 +95,14 @@
         locationManager = [[CLLocationManager alloc] init];
     }
     locationManager.delegate = self;
+    
+    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [locationManager requestWhenInUseAuthorization];
+    }
+
+    
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //locationManager.distanceFilter = 10.0f;//kCLDistanceFilterNone
+    locationManager.distanceFilter = 10.0f;//kCLDistanceFilterNone
     [locationManager startUpdatingLocation];
     
     lastCoor = kCLLocationCoordinate2DInvalid;

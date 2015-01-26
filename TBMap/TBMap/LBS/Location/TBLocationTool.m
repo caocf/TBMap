@@ -13,7 +13,7 @@
 +(NSError *)GPSStatusCheck
 {
     BOOL openedLocation = [CLLocationManager locationServicesEnabled];
-    BOOL havePermission = [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized;
+    BOOL havePermission = [CLLocationManager authorizationStatus] >= kCLAuthorizationStatusAuthorized;
     
     NSMutableDictionary *errorInfo = [[NSMutableDictionary alloc] init];
     NSError *error = nil;

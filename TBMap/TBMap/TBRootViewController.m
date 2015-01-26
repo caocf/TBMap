@@ -12,6 +12,7 @@
 #import "TBLocationGeoTool.h"
 #import "TBLocationViewController.h"
 #import "TBMapViewController.h"
+#import "TBCreateTravelViewController.h"
 
 @interface TBRootViewController ()
 {
@@ -46,6 +47,14 @@
     
     return;
     
+}
+
+-(IBAction)createTravel:(id)sender
+{
+    TBCreateTravelViewController *vc = [[TBCreateTravelViewController alloc] initWithNibName:@"TBCreateTravelViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
+    return;
 }
 
 

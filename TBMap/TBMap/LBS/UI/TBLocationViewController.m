@@ -101,7 +101,8 @@
 - (IBAction)queryReverseGeo:(id)sender {
 
     CLLocationCoordinate2D coor = CLLocationCoordinate2DMake([_inputLatitude.text doubleValue], [_inputLongitude.text doubleValue]);
-                                                             
+//    coor = CLLocationCoordinate2DMake(29.415832, 106.555555);
+    
     [geo reverseGeocode:coor complete:^(NSArray *placemarks) {
         if ([placemarks count] == 0) {
             _reverseResult.text = @"地址没找到";
